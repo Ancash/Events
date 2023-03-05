@@ -20,6 +20,7 @@ public class EventManager {
 
 		if (listeners != null) {
 			for (ListenerRegistration listener : listeners) {
+				IThread.clearContext();
 				try {
 					if (!event.isCancelled() || listener.getOrder().ignoresCancelled()) {
 						listener.getExecutor().execute(event);
@@ -28,9 +29,9 @@ public class EventManager {
 					System.err.println("Could not pass event " + event.getEventName() + " to "
 							+ listener.getOwner().getClass().getName());
 
-					if (IThread.isIThread())
+					if (IThread.isIThread()) {
 						IThread.onThrowable(Thread.currentThread(), ex);
-					else
+					} else
 						ex.printStackTrace();
 				}
 			}

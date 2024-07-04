@@ -21,19 +21,10 @@
 		</plugins>
 	</build>
 
-	<dependencies>
-		<dependency>
-			<groupId>de.ancash</groupId>
-			<artifactId>ithread</artifactId>
-			<version>0.0.3</version>
-		</dependency>
-	</dependencies>
-
 	<distributionManagement>
 		<repository>
-			<id>github</id>
-			<name>GitHub Ancash Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/Ancash/Events</url>
+			<id>raspi</id>
+			<url>http://denzo.algoholics.eu:25565/releases</url>
 		</repository>
 	</distributionManagement>
 </project>
